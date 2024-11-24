@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>涼子餵食模擬器</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <!-- 音樂播放器 -->
+    <audio id="bgMusic" src="sound/BGM.mp3" loop></audio>
+    <button id="BGM" title="瀏覽器不給自動播放音樂，只能請你們自己開了(灬ºωº灬)">音效，啟動！</button>
+
+    <!-- 遊戲 -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <!-- 結束畫面 -->
+    <div id="gameOverScreen">
+        <p id="finalScore"></p>
+        <button class="bubbly-button" id="restartButton" title="繼續把涼子餵飽ε٩(๑> ₃ <)۶з">重新開始</button>
+        <button class="bubbly-button" id="shareButton" title="讓更多人把涼子餵得更飽(〃∀〃)">分享網址</button>
+        <button class="bubbly-button" id="screenshotButton" title="每日關心涼子的進食狀況( • ̀ω•́ )">保存截圖</button>
+        <input type="text" id="nicknameInput" placeholder="輸入你的暱稱">
+        <button class="bubbly-button" id="uploadScoreButton" title="讓大家知道你有好好餵食涼子σ`∀´)σ">上傳分數</button>
+        <button class="bubbly-button" id="leaderboardButton" title="檢查其他人有沒有好好餵食涼子σ ﾟ∀ ﾟ) ﾟ∀ﾟ)σ">查看排行榜</button>
+    </div>
+
+    <div id="leaderboardScreen">
+        <h2>排行榜</h2>
+        <ul id="leaderboardList"></ul>
+        <button class="closeLeaderboard">關閉</button>
+    </div>
+
+    <div id="shareScreen">
+        <div id="shareOptions"></div>
+        <button id="backButton">返回</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="game.js"></script>
+    <script>
+        document.getElementById('BGM').addEventListener('click', function() {
+            var music = document.getElementById('bgMusic');
+            
+            music.play()});
+    </script>
+    
+</body>
+
+</html>
